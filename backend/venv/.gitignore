@@ -1,0 +1,15 @@
+# Backend - Python/Flask
+venv/
+__pycache__/
+*.pyc
+.env
+*.sqlite3
+
+# Frontend - React/Vite
+node_modules/
+dist/
+.env.local
+
+# General / OS
+.DS_Store
+Thumbs.db
