@@ -1,16 +1,9 @@
 services:
-  # A Web Service for our Flask API
   - type: web
     name: taskflow-backend
-    # Use the Python 3 environment
     env: python
-    # The region to deploy in
     region: oregon
-    # Explicitly select the free instance type
     plan: free
-    # The command to install dependencies
     buildCommand: "pip install -r backend/requirements.txt"
-    # UPDATED: The command to start the server
-    startCommand: "gunicorn --chdir backend wsgi:app"
-    # Health check path to ensure the service is running
-    healthCheckPath: /
+    # UPDATED: New start command for the package structure
+    startCommand: "gunicorn backend.app:app"
