@@ -5,5 +5,5 @@ services:
     region: oregon
     plan: free
     buildCommand: "pip install -r backend/requirements.txt"
-    # UPDATED: Added --pythonpath to tell Gunicorn where to look
+    # This is the corrected start command
     startCommand: "gunicorn --pythonpath . backend.app:app"
