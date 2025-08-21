@@ -6,6 +6,8 @@ services:
     env: python
     # The region to deploy in
     region: oregon
+    # NEW: Explicitly select the free instance type
+    plan: free
     # The command to install dependencies
     buildCommand: "pip install -r backend/requirements.txt"
     # The command to start the server
