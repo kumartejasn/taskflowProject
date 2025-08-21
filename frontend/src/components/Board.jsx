@@ -16,7 +16,7 @@ const Board = () => {
 
   const fetchTasks = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/tasks', {
+      const response = await axios.get('https://taskflow-backend-new.onrender.com/tasks', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       setTasks(response.data.tasks);
@@ -35,7 +35,7 @@ const Board = () => {
     e.preventDefault();
     if (!newTaskContent) return;
     try {
-      const response = await axios.post('http://localhost:5000/tasks',
+      const response = await axios.post('https://taskflow-backend-new.onrender.com/tasks',
         { content: newTaskContent },
         { headers: { 'Authorization': `Bearer ${token}` } }
       );
@@ -48,7 +48,7 @@ const Board = () => {
 
   const handleUpdateTaskStatus = async (taskId, newStatus) => {
     try {
-      await axios.put(`http://localhost:5000/tasks/${taskId}`,
+      await axios.put(`https://taskflow-backend-new.onrender.com/tasks/${taskId}`,
         { status: newStatus },
         { headers: { 'Authorization': `Bearer ${token}` } }
       );
@@ -62,7 +62,7 @@ const Board = () => {
 
   const handleDeleteTask = async (taskId) => {
     try {
-      await axios.delete(`http://localhost:5000/tasks/${taskId}`, {
+      await axios.delete(`https://taskflow-backend-new.onrender.com/tasks/${taskId}`, {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       setTasks(tasks.filter(task => task.id !== taskId));

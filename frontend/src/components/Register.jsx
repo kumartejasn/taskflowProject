@@ -10,7 +10,7 @@ const Register = () => {
     e.preventDefault();
     try {
       // NEW: Send a POST request to the backend's /register endpoint
-      const response = await axios.post('http://localhost:5000/register', {
+      const response = await axios.post('https://taskflow-backend-new.onrender.com/register', {
         username: username,
         password: password
       });
